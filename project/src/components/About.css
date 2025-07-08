@@ -1,0 +1,62 @@
+.tag-line-2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  color: navy;
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 60px;
+
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.cont-all {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.cont-l-img img {
+  margin-left: 100px;
+}
+
+.cont-r-img img {
+  margin-right: 100px;
+}
+
+.cont-txt {
+  width: 45%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+
+}
+
+.cont-txt .left {
+  margin-right: 300px;
+}
+
+.cont-txt .right {
+  margin-left: 300px;
+}
+
+
+.cont-txt h1 {
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.cont-txt p {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+
+}
