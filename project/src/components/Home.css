@@ -1,31 +1,13 @@
-
 .container {
   display: flex;
   background-color: #f0f8ff;
   justify-content: center;
   align-items: flex-start;
   padding: 50px;
-  gap: 40px;
+  gap: 80px;
   flex-wrap: wrap;
 }
 
-.left-col {
-  flex: 1;
-  min-width: 300px;
-  margin-left: 100px;
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-}
-
-
-.right-col {
-  flex: 1;
-  min-width: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 
 .img1 {
@@ -38,10 +20,10 @@
 
 .slogan {
   background-color: #d1e6f9;
-  padding: 20px;
+  padding: 25px;
+  margin-top: 60px;
   border-left: 4px solid #00aaff;
   border-radius: 6px;
-  margin-bottom: 30px;
 }
 
 .slogan h1 {
@@ -63,7 +45,7 @@
 }
 
 
- .home-btn {
+.home-btn {
   margin-top: 10px;
   padding: 9px 14px;
   background-color: navy;
@@ -77,7 +59,7 @@
   transition: background-color 0.3s;
 }
 
-.home-btn:hover{
+.home-btn:hover {
   background-color: rgb(1, 1, 93);
 }
 
@@ -93,27 +75,29 @@
 
 
 
-.tag-line{
+.tag-line {
   display: flex;
   justify-content: center;
   color: navy;
   font-size: 40px;
   font-weight: 600;
   margin-top: 60px;
-  
+
 }
 
-.about-info{
+.about-info {
   display: flex;
-   padding: 80px 180px;
-   gap: 90px;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 200px;
+  gap: 100px;
 }
 
-.about-info img{
+.about-info img {
   border-radius: 20px;
 }
 
-.abt-cont{
+.abt-cont {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -138,22 +122,154 @@
   content: '✓';
   position: absolute;
   left: 0;
-  top: 0;
   color: #2E8B57;
   font-weight: bold;
   font-size: 18px;
 }
 
 
-.abt-cont h1{
+.abt-cont h1 {
   font-size: 30px;
-  
+
 }
 
-.abt-cont p{
-   font-size: 15px;
-   font-weight: 400;
+.abt-cont p {
+  font-size: 15px;
+  font-weight: 400;
   color: #333;
   line-height: 1.6;
 
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 20px;
+    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slogan {
+    margin-top: 30px;
+    padding: 20px;
+  }
+
+  .slogan h1 {
+    font-size: 28px;
+  }
+
+  .slogan p {
+    font-size: 16px;
+  }
+
+  .tag-line {
+    font-size: 30px;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .about-info {
+    flex-direction: row;
+    padding: 40px 20px;
+    gap: 40px;
+  }
+
+  .about-info img {
+    width: 20%;
+    max-width: 400px;
+  }
+
+  .abt-cont {
+    text-align: center;
+  }
+
+  .abt-cont h1 {
+    font-size: 14px;
+
+  }
+
+  .abt-cont p {
+    font-size: 10px;
+
+
+
+  }
+
+  .checklist {
+
+    font-size: 8px;
+  }
+
+ 
+
+
+  .home-btn {
+    font-size: 9px;
+
+  }
+
+}
+
+/* Responsive styles for mobile (480px and below) */
+@media (max-width: 480px) {
+   .container {
+  padding: 20px 15px;
+  gap: 30px;
+}
+
+.slogan {
+  margin-top: 20px;
+  padding: 15px;
+}
+
+.slogan h1 {
+  font-size: 24px;
+}
+
+.slogan p {
+  font-size: 15px;
+}
+
+.tag-line {
+  font-size: 24px;
+  margin-top: 30px;
+  padding: 0 15px;
+}
+
+.about-info {
+  padding: 30px 15px;
+}
+
+.abt-cont h1 {
+  font-size: 22px;
+}
+
+.checklist li {
+  padding-left: 25px;
+  font-size: 14px;
+}
+
+.checklist li::before {
+  font-size: 16px;
+}
+}
+
+/* Very small devices (360px and below) */
+@media (max-width: 360px) {
+  .slogan h1 {
+    font-size: 22px;
+  }
+
+  .tag-line {
+    font-size: 22px;
+  }
+
+  .home-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
 }

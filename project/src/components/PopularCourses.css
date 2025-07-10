@@ -150,3 +150,17 @@
   height: auto;
   filter: brightness(0) invert(1);
 }
+
+@media (max-width: 768px) {
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .course-card {
+    flex: 0 0 calc(50% - 20px); 
+    max-width: 100%;
+  }
+}

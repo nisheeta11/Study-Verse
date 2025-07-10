@@ -13,7 +13,7 @@ const Home = () => {
     <div>
 
       <div className="container">
-        <div className="left-col">
+        
           <div className="slogan">
             <h1>Learn. Grow. Succeed.</h1>
             <p>Your future starts with StudyVerse — Learn skills that shape tomorrow.</p>
@@ -25,11 +25,11 @@ const Home = () => {
                 <img src={courseArrow} alt="Try Arrow" className="arrow-icon" />
               </button></NavLink>
           </div>
-        </div>
+       
 
-        <div className="right-col">
+        
           <img className='img1' src={learningImg} alt="Learning" />
-        </div>
+       
       </div>
 
 
