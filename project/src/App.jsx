@@ -5,43 +5,54 @@ import Home from './components/Home'
 import Login from './components/Login'
 import Footer from './components/Footer'
 import About from './components/About'
-
-
-
+import ScrollToTop from './components/ScrollToTop' 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import PopularCourses from './components/PopularCourses'
+// import PopularCourses from './components/PopularCourses'
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element:  <><Navbar/><Home/><Footer/> </>
+      element: (
+        <>
+          <ScrollToTop /> 
+          <Navbar />
+          <Home />
+          <Footer />
+        </>
+      )
     },
     {
       path: "/login",
-      element:  <><Login/></>
+      element: (
+        <>
+          <ScrollToTop /> 
+          <Login />
+        </>
+      )
     },
-      {
+    {
       path: "/about",
-      element:  <><Navbar/><About/></>
+      element: (
+        <>
+          <ScrollToTop />
+          <Navbar />
+          <About />
+        </>
+      )
     },
-
-       {
+    {
       path: "/course",
-      element:  <><Navbar/></>
+      element: (
+        <>
+          <ScrollToTop />
+          <Navbar />
+        </>
+      )
     },
-
-
   ])
-  
 
-  return (
-    <>
-    
-    <RouterProvider router={router} />
-   
-    </>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App

@@ -1,6 +1,6 @@
-import web1Img from '../assets/Full-Stack.jpg';
+import web1Img from '../assets/FullStack.jpg';
 import web2Img from '../assets/JS-Mastery.jpg';
-import web3Img from '../assets/React.jpg';
+import web3Img from '../assets/react.jpg';
 import web4Img from '../assets/NodeJS.jpg';
 import design1Img from '../assets/UI--UX.jpg';
 import design2Img from '../assets/User-Research.jpg';
@@ -23,28 +23,28 @@ const courses = {
     {
       title: "Full Stack Web Development",
       description: "Learn HTML, CSS, JS & React.",
-      price: "$49.99",
+      price: "$9.99",
       rating: 4.8,
       image: web1Img
     },
     {
       title: "JavaScript Mastery",
       description: "Deep dive into JavaScript.",
-      price: "$29.99",
+      price: "$2.99",
       rating: 4.6,
       image: web2Img
     },
     {
       title: "React Crash Course",
       description: "Build interactive UIs with React.",
-      price: "$34.99",
+      price: "$3.99",
       rating: 4.7,
       image: web3Img
     },
     {
       title: "Node.js & Express Essentials",
       description: "Backend fundamentals using Node.js.",
-      price: "$39.99",
+      price: "$3.99",
       rating: 4.6,
       image: web4Img
     }
@@ -54,28 +54,28 @@ const courses = {
     {
       title: "UI/UX Bootcamp",
       description: "Master design principles and Figma.",
-      price: "$39.99",
+      price: "$9.99",
       rating: 4.7,
       image: design1Img
     },
     {
       title: "User Research Fundamentals",
       description: "Conduct effective UX research.",
-      price: "$29.99",
+      price: "$2.99",
       rating: 4.5,
       image: design2Img
     },
     {
       title: "Design Systems in Figma",
       description: "Build scalable design systems.",
-      price: "$34.99",
+      price: "$4.99",
       rating: 4.6,
       image: design3Img
     },
     {
       title: "Prototyping Advanced Flows",
       description: "Turn wireframes into interactive prototypes.",
-      price: "$36.99",
+      price: "$6.99",
       rating: 4.7,
       image: design4Img
     }
@@ -85,28 +85,28 @@ const courses = {
     {
       title: "Photoshop Basics",
       description: "Get started with Adobe Photoshop.",
-      price: "$19.99",
+      price: "$9.99",
       rating: 4.5,
       image: graphic1Img
     },
     {
       title: "Illustrator Mastery",
       description: "Create stunning vector graphics.",
-      price: "$24.99",
+      price: "$14.99",
       rating: 4.6,
       image: graphic2Img
     },
     {
       title: "Canva for Beginners",
       description: "Design social media content with Canva.",
-      price: "$14.99",
+      price: "$10.99",
       rating: 4.4,
       image: graphic3Img
     },
     {
       title: "InDesign Essentials",
       description: "Create layouts for print and digital.",
-      price: "$22.99",
+      price: "$2.99",
       rating: 4.5,
       image: graphic4Img
     }
@@ -116,7 +116,7 @@ const courses = {
     {
       title: "Python for Data Science",
       description: "Learn data analysis with Python.",
-      price: "$39.99",
+      price: "$9.99",
       rating: 4.7,
       image: data1Img
     },
@@ -124,7 +124,7 @@ const courses = {
     {
       title: "Data Visualization with Tableau",
       description: "Present insights with powerful visuals.",
-      price: "$34.99",
+      price: "$4.99",
       rating: 4.6,
       image: data2Img
     }
@@ -134,21 +134,21 @@ const courses = {
     {
       title: "Digital Marketing 101",
       description: "Overview of all digital marketing channels.",
-      price: "$29.99",
+      price: "$9.99",
       rating: 4.5,
       image: digi1Img
     },
     {
       title: "SEO Masterclass",
       description: "Boost website rankings with SEO.",
-      price: "$34.99",
+      price: "$4.99",
       rating: 4.7,
       image: digi2Img
     },
     {
       title: "Social Media Marketing",
       description: "Grow your brand on social platforms.",
-      price: "$24.99",
+      price: "$2.99",
       rating: 4.6,
       image: digi3Img
     }

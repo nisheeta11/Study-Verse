@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import learnSkills from '../assets/learn.jpg';
 import schedule from '../assets/schedule.jpg';
 import certification from '../assets/certified.jpg';
+import affordable from '../assets/buy.jpg';
+import group from '../assets/group.jpg';
 import './About.css'
 
 const About = () => {
@@ -20,15 +22,21 @@ const About = () => {
             <img src={learnSkills} style={{ width: '450px', height: 'auto' }} />
           </div>
           <div className="cont-txt left">
-            <h2>Learn new skils anytime, anywhere.</h2>
-            <p>Choose from hundreds of expert-led courses in tech, business, design, and more. Learn on-demand at your own pace with practical skills that help you advance your career or projects. With regular updates, StudyVerse keeps you ahead in a fast-changing world.</p></div>
+            <h2>Learn New Skills Anytime, Anywhere</h2>
+            <p>
+              Gain access to a wide range of expert-led courses in technology, business, design, and more. Our on-demand learning model lets you build real-world skills at your own pace, whenever and wherever it suits you. With regularly updated content, StudyVerse ensures you stay ahead in a rapidly evolving world.
+            </p>
+          </div>
         </div>
 
 
         <div className="cont-all">
           <div className="cont-txt right">
-            <h2>Flexible learning that fits your schedule.</h2>
-            <p>Start, pause, and resume courses anytime. Learn at your own pace without deadlines, balancing education with your busy life. With 24/7 access on any device, you can pick up right where you left off and keep growing on your schedule.</p></div>
+            <h2>Flexible Learning That Fits Your Schedule</h2>
+            <p>
+              Our platform lets you learn on your terms—start, pause, and resume courses whenever it works for you. With no deadlines and 24/7 access across all devices, you can balance learning with your lifestyle and progress at your own pace.
+            </p>
+          </div>
           <div className="cont-r-img">
             <img src={schedule} style={{ width: '300px', height: 'auto' }} />
           </div>
@@ -40,15 +48,44 @@ const About = () => {
             <img src={certification} style={{ width: '350px', height: 'auto' }} />
           </div>
           <div className="cont-txt left">
-            <h2>Get Certified.</h2>
-            <p>Complete courses and earn certificates to showcase your skills to employers or clients. These recognized credentials validate your expertise and help you stand out in today’s competitive job market, whether advancing your career, switching fields, or growing freelance opportunities.
+            <h2>Get Certified</h2>
+            <p>
+              We offer industry-recognized certificates upon course completion, helping you validate your skills and stand out in today’s job market. Whether you're advancing your career, switching fields, or building a freelance profile, our certifications showcase your expertise to employers and clients.
+            </p>
+          </div>
 
-            </p></div>
         </div>
+
+        <div className="cont-all">
+          <div className="cont-txt right">
+            <h2>Affordable and Accessible</h2>
+            <p>
+              Learning should never be limited by cost or location. That’s why we offer flexible, budget-friendly courses that fit into your life—wherever you are, whenever you’re ready. Empower yourself with knowledge, without the pressure or high price tag.
+            </p>
+          </div>
+          <div className="cont-r-img">
+            <img src={affordable} style={{ width: '300px', height: 'auto' }} />
+          </div>
+        </div>
+
+
+        <div className="cont-all">
+          <div className="cont-l-img">
+            <img src={group} style={{ width: '350px', height: 'auto' }} />
+          </div>
+          <div className="cont-txt left">
+            <h2>Community Support</h2>
+            <p>
+              You're never alone on your learning journey. Join a vibrant community of students, instructors, and mentors who are ready to help, share insights, and grow together. Ask questions, get feedback, and stay motivated with support that’s just a message away.
+            </p>
+          </div>
+
+        </div>
+
 
       </div>
 
-    </div>
+    </div >
   )
 }
 
