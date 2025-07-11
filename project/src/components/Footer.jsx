@@ -1,18 +1,18 @@
 import React from 'react';
 import './Footer.css';
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-row">
 
-        {/* Brand */}
         <div className="footer-col">
-          <h2 className="brand-name">StudyVerse</h2>
+          <h2 className="brand-name br-1">StudyVerse</h2>
           <p>Learn. Grow. Succeed.</p>
         </div>
 
-        {/* Contact Info */}
+
         <div className="footer-col">
           <h4>Contact Info</h4>
           <p>support@studyverse.com</p>
@@ -20,13 +20,12 @@ const Footer = () => {
           <p>Butwal, Nepal</p>
         </div>
 
-        {/* Social Media */}
         <div className="footer-col">
           <h4>Social Media</h4>
           <div className="social-icons">
-            <a href="#">Facebook</a>
-            <a href="#"> Instagram</a>
-            <a href="#"> LinkedIn</a>
+            <Link to="#">Facebook</Link>
+            <Link to="#"> Instagram</Link>
+            <Link to="#"> LinkedIn</Link>
           </div>
         </div>
 

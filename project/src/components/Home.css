@@ -15,6 +15,7 @@
   max-width: 400px;
   height: auto;
   border-radius: 10px;
+  display: block;
 }
 
 
@@ -87,10 +88,12 @@
 
 .about-info {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 80px 200px;
   gap: 100px;
+  /* flex-wrap: wrap; */
 }
 
 .about-info img {
@@ -173,18 +176,20 @@
   }
 
   .about-info {
-    flex-direction: row;
-    padding: 40px 20px;
-    gap: 40px;
+    padding: 30px 20px;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
   }
 
   .about-info img {
     width: 20%;
-    max-width: 400px;
+    max-width: 300px;
+    height: auto;
   }
 
   .abt-cont {
-    text-align: center;
+    text-align: left;
   }
 
   .abt-cont h1 {
@@ -194,82 +199,83 @@
 
   .abt-cont p {
     font-size: 10px;
-
-
-
   }
 
   .checklist {
-
     font-size: 8px;
   }
 
- 
+.checklist li::before {
+  font-size: 12px;
+}
 
 
   .home-btn {
-    font-size: 9px;
+    font-size: 6px;
 
   }
 
 }
 
-/* Responsive styles for mobile (480px and below) */
 @media (max-width: 480px) {
-   .container {
-  padding: 20px 15px;
-  gap: 30px;
-}
 
-.slogan {
-  margin-top: 20px;
-  padding: 15px;
-}
 
-.slogan h1 {
-  font-size: 24px;
-}
+  .slogan {
+    margin-top: 20px;
+    padding: 10px;
+   
+  }
 
-.slogan p {
-  font-size: 15px;
-}
-
-.tag-line {
-  font-size: 24px;
-  margin-top: 30px;
-  padding: 0 15px;
-}
-
-.about-info {
-  padding: 30px 15px;
-}
-
-.abt-cont h1 {
-  font-size: 22px;
-}
-
-.checklist li {
-  padding-left: 25px;
-  font-size: 14px;
-}
-
-.checklist li::before {
-  font-size: 16px;
-}
-}
-
-/* Very small devices (360px and below) */
-@media (max-width: 360px) {
   .slogan h1 {
-    font-size: 22px;
+    font-size: 15px;
+  
+  }
+
+  .slogan p {
+    font-size: 10px;
+   
   }
 
   .tag-line {
-    font-size: 22px;
+    font-size: 20px;
+   
+  }
+ 
+
+  .about-info {
+    align-items: flex-start;
+  }
+
+  .about-info img {
+    display: none;
+  }
+
+
+  .abt-cont h1 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .abt-cont p {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .checklist {
+    font-size: 9px;
+    padding-left: 18px;
+  }
+
+  .checklist li::before {
+    font-size: 8px;
   }
 
   .home-btn {
-    padding: 8px 12px;
-    font-size: 13px;
+    font-size: 8px;
+    padding: 5px 12px;
+  }
+
+  .arrow-icon{
+    width: 10px;
   }
 }

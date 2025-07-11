@@ -24,6 +24,7 @@ const Home = () => {
                 View Courses
                 <img src={courseArrow} alt="Try Arrow" className="arrow-icon" />
               </button></NavLink>
+              
           </div>
        
 

@@ -163,4 +163,54 @@
     flex: 0 0 calc(50% - 20px); 
     max-width: 100%;
   }
+
+
+.category-button {
+
+  padding: 10px 13px;
+  font-weight: 300;
+
 }
+
+
+.category-button.active {
+  background-color: navy;
+  color: white;
+}
+
+}
+
+
+
+
+
+
+@media (max-width: 480px) {
+  .course-card {
+    flex: 0 0 80%; 
+    max-width: 80%;
+  }
+
+  .category-button {
+    font-size: 6px;
+    padding: 6px 15px;
+
+  }
+
+  .card-container {
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+
+  .heading {
+  font-size: 25px;
+
+}
+}
+
+
+
+
+
+
