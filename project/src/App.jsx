@@ -9,6 +9,8 @@ import ScrollToTop from './components/ScrollToTop'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AddToCart from './Pages/AddToCart'
 import Payment from './Pages/Paymentpage'
+import PopularCourses from './components/PopularCourses'
+import Teacher from './Pages/Teacher'
 
 function App() {
   const router = createBrowserRouter([
@@ -42,6 +44,17 @@ function App() {
         </>
       )
     },
+      {
+      path: "/course",
+      element: (
+        <>
+          <ScrollToTop />
+          <Navbar />
+          <PopularCourses/>
+          
+        </>
+      )
+    },
     {
       path: "/addtocart",
       element: (
@@ -58,8 +71,18 @@ function App() {
       element: (
         <>
           <ScrollToTop />
-          {/* <Navbar /> */}
           <Payment/>
+          
+        </>
+      )
+    },
+       {
+      path: "/teacher",
+      element: (
+        <>
+          <ScrollToTop />
+          <Navbar/>
+          <Teacher/>
           
         </>
       )

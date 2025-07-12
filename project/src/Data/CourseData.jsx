@@ -122,9 +122,10 @@ const courses = {
       rating: 4.5,
       image: graphic4Img
     }
+
   ],
 
-    "Data Science": [
+  "Data Science": [
     {
       id: 13,
       title: "Python for Data Science",
@@ -136,7 +137,7 @@ const courses = {
 
     {
       id: 14,
-      title: "Data Visualization with Tableau",
+      title: "Data Visualization",
       description: "Present insights with powerful visuals.",
       price: "$4.99",
       rating: 4.6,
@@ -169,7 +170,7 @@ const courses = {
       rating: 4.6,
       image: digi3Img
     }
- 
+
   ],
 
 

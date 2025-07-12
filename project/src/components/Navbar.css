@@ -29,10 +29,12 @@
 }
 
 
+/* 
 .nav-cart-icon{
   width: 40px;
-  filter: brightness(0) invert(1);
-}
+  height: 100px;
+ 
+} */
 
   .btn {
   background-color: #2E8B57;
@@ -80,8 +82,9 @@
 }
 
 .nav-cart-icon {
-  width: 28px;
-  height: 28px;
+  width: 38px;
+  height: 38px;
+   filter: brightness(0) invert(1);
 }
 
 

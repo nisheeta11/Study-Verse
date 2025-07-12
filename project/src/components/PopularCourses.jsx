@@ -1,10 +1,11 @@
 import React, { useState, useContext } from 'react';
 import './PopularCourses.css';
 import courses from '../Data/CourseData';
-import courseArrow from '../assets/getarrow.svg';
 import cartIcon from '../assets/carticon.svg';
 import { CartContext } from '../Context/CartContext';
 import { toast } from 'react-toastify';
+import { NavLink } from 'react-router-dom'
+
 
 const PopularCourses = () => {
   const [selected, setSelected] = useState("Web Development");
@@ -26,17 +27,17 @@ const PopularCourses = () => {
     <div className="popular-container">
       <h2 className="heading">Our Popular Online Courses</h2>
 
- <div className="btn-group">
-  {Object.keys(courses).map(category => (
-    <button
-      key={category}
-      onClick={() => setSelected(category)}
-      className={`button-btn ${selected === category ? 'active' : ''}`}
-    >
-      {category}
-    </button>
-  ))}
-</div>
+      <div className="btn-group">
+        {Object.keys(courses).map(category => (
+          <button
+            key={category}
+            onClick={() => setSelected(category)}
+            className={`button-btn ${selected === category ? 'active' : ''}`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
 
 
       <div className="card-container">
@@ -57,17 +58,18 @@ const PopularCourses = () => {
                   Add To Cart
                   <img src={cartIcon} className="cart-icon" />
                 </button>
-
-                <button className='btn-2 buy-btn'>
-                  Buy Now
-                </button>
+                <NavLink to="/payment">
+                  <button className='btn-2 buy-btn'>
+                    Buy Now
+                  </button>
+                </NavLink>
               </div>
             </div>
           </div>
         ))}
       </div>
 
- 
+
     </div>
   );
 };
