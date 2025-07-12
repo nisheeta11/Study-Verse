@@ -7,7 +7,8 @@ import Footer from './components/Footer'
 import About from './components/About'
 import ScrollToTop from './components/ScrollToTop' 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-// import PopularCourses from './components/PopularCourses'
+import AddToCart from './Pages/AddToCart'
+import Payment from './Pages/Paymentpage'
 
 function App() {
   const router = createBrowserRouter([
@@ -42,11 +43,24 @@ function App() {
       )
     },
     {
-      path: "/course",
+      path: "/addtocart",
       element: (
         <>
           <ScrollToTop />
           <Navbar />
+          <AddToCart/>
+          
+        </>
+      )
+    },
+        {
+      path: "/payment",
+      element: (
+        <>
+          <ScrollToTop />
+          {/* <Navbar /> */}
+          <Payment/>
+          
         </>
       )
     },

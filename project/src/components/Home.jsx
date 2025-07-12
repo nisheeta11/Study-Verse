@@ -54,7 +54,7 @@ const Home = () => {
             <li>Earn industry-recognized certificates to showcase your achievements.</li>
           </ul>
           <NavLink to="/about">
-            <button className='btn home-btn'>
+            <button className='home-btn'>
               About More
               <img src={courseArrow} alt="Try Arrow" className="arrow-icon" />
             </button>

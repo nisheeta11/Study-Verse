@@ -21,6 +21,7 @@ import data2Img from '../assets/DataScience.jpg';
 const courses = {
   "Web Development": [
     {
+      id: 1,
       title: "Full Stack Web Development",
       description: "Learn HTML, CSS, JS & React.",
       price: "$9.99",
@@ -28,6 +29,7 @@ const courses = {
       image: web1Img
     },
     {
+      id: 2,
       title: "JavaScript Mastery",
       description: "Deep dive into JavaScript.",
       price: "$2.99",
@@ -35,6 +37,7 @@ const courses = {
       image: web2Img
     },
     {
+      id: 3,
       title: "React Crash Course",
       description: "Build interactive UIs with React.",
       price: "$3.99",
@@ -42,6 +45,7 @@ const courses = {
       image: web3Img
     },
     {
+      id: 4,
       title: "Node.js & Express Essentials",
       description: "Backend fundamentals using Node.js.",
       price: "$3.99",
@@ -52,6 +56,7 @@ const courses = {
 
   "UI/UX Design": [
     {
+      id: 5,
       title: "UI/UX Bootcamp",
       description: "Master design principles and Figma.",
       price: "$9.99",
@@ -59,6 +64,7 @@ const courses = {
       image: design1Img
     },
     {
+      id: 6,
       title: "User Research Fundamentals",
       description: "Conduct effective UX research.",
       price: "$2.99",
@@ -66,6 +72,7 @@ const courses = {
       image: design2Img
     },
     {
+      id: 7,
       title: "Design Systems in Figma",
       description: "Build scalable design systems.",
       price: "$4.99",
@@ -73,6 +80,7 @@ const courses = {
       image: design3Img
     },
     {
+      id: 8,
       title: "Prototyping Advanced Flows",
       description: "Turn wireframes into interactive prototypes.",
       price: "$6.99",
@@ -83,6 +91,7 @@ const courses = {
 
   "Graphic Design": [
     {
+      id: 9,
       title: "Photoshop Basics",
       description: "Get started with Adobe Photoshop.",
       price: "$9.99",
@@ -90,6 +99,7 @@ const courses = {
       image: graphic1Img
     },
     {
+      id: 10,
       title: "Illustrator Mastery",
       description: "Create stunning vector graphics.",
       price: "$14.99",
@@ -97,6 +107,7 @@ const courses = {
       image: graphic2Img
     },
     {
+      id: 11,
       title: "Canva for Beginners",
       description: "Design social media content with Canva.",
       price: "$10.99",
@@ -104,6 +115,7 @@ const courses = {
       image: graphic3Img
     },
     {
+      id: 12,
       title: "InDesign Essentials",
       description: "Create layouts for print and digital.",
       price: "$2.99",
@@ -114,6 +126,7 @@ const courses = {
 
     "Data Science": [
     {
+      id: 13,
       title: "Python for Data Science",
       description: "Learn data analysis with Python.",
       price: "$9.99",
@@ -122,6 +135,7 @@ const courses = {
     },
 
     {
+      id: 14,
       title: "Data Visualization with Tableau",
       description: "Present insights with powerful visuals.",
       price: "$4.99",
@@ -132,6 +146,7 @@ const courses = {
 
   "Digital Marketing": [
     {
+      id: 15,
       title: "Digital Marketing 101",
       description: "Overview of all digital marketing channels.",
       price: "$9.99",
@@ -139,6 +154,7 @@ const courses = {
       image: digi1Img
     },
     {
+      id: 16,
       title: "SEO Masterclass",
       description: "Boost website rankings with SEO.",
       price: "$4.99",
@@ -146,6 +162,7 @@ const courses = {
       image: digi2Img
     },
     {
+      id: 17,
       title: "Social Media Marketing",
       description: "Grow your brand on social platforms.",
       price: "$2.99",
