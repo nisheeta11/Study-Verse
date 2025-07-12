@@ -32,21 +32,28 @@ const AddToCart = () => {
           <div className="card-box">
             {cartItems.map((item) => (
               <div className="cart-row" key={item.id}>
-                <div className="cart-course-card">
-                  <img src={item.image} className="cart-course-image" alt={item.title} />
-                  <div className="cart-Card-cont">
-                    <h3>{item.title}</h3>
-                  </div>
-                </div>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+    <div className="cart-course-card">
+      <img src={item.image} className="cart-course-image" alt={item.title} />
+    </div>
 
-                <div className="cart-price-standalone">
-                  <p>{item.price}</p>
-                  <button onClick={() => handleRemove(item.id)} className="remove-btn">
-                    <FaTrash />
-                  </button>
-                </div>
-              </div>
-            ))}
+    <div className="cart-Card-cont">
+      <h3>{item.title}</h3>
+      <p><strong>Quantity:</strong> {item.quantity || 1}</p>
+      <p><strong>Price per item:</strong> Rs. {item.price}</p>
+    </div>
+  </div>
+
+  <div className="cart-price-standalone">
+    <p>Rs. {item.price * (item.quantity || 1)}</p>
+    <button onClick={() => handleRemove(item.id)} className="remove-btn">
+      <FaTrash />
+    </button>
+  </div>
+</div>
+
+         ))}
+
           </div>
 
           <div className="cart-summary sticky-summary">

@@ -15,14 +15,21 @@ export const CartProvider = ({ children }) => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const addToCart = (course) => {
-  console.log("Course being added to cart:", course);
+const addToCart = (course) => {
   setCartItems(prev => {
     const exists = prev.find(item => item.id === course.id);
-    if (exists) return prev;
-    return [...prev, { ...course }];
+    if (exists) {
+      return prev.map(item =>
+        item.id === course.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      );
+    }
+    return [...prev, { ...course, quantity: 1 }];
   });
 };
+
+
 
 
   const removeFromCart = (id) => {
@@ -31,8 +38,12 @@ export const CartProvider = ({ children }) => {
 
   const totalPrice = cartItems.reduce((total, item) => {
   const price = parseFloat(item.price);
-  return total + (isNaN(price) ? 0 : price);
+  const quantity = item.quantity || 1;
+  return total + (isNaN(price) ? 0 : price * quantity);
 }, 0);
+
+
+
 
 
   return (
