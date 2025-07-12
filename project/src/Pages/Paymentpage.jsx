@@ -2,13 +2,17 @@ import React, { useContext, useState } from 'react';
 import { CartContext } from '../Context/CartContext';
 import './Paymentpage.css';
 import esewa from '../assets/esewa.jpg';
-import khalti from '../assets/khalti.jpg';
+import khalti from '../assets/Khalti.jpg';
 import visa from '../assets/visa.jpg';
 import mastercard from '../assets/mastercard.jpg';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Paymentpage = () => {
   const { totalPrice } = useContext(CartContext);
+  const location = useLocation();
+  const buyNowPrice = location.state?.price;
+  const finalPrice = buyNowPrice ? parseFloat(buyNowPrice) : totalPrice;
+
   const [selectedMethod, setSelectedMethod] = useState('');
   const navigate = useNavigate(); 
 
@@ -25,7 +29,7 @@ const Paymentpage = () => {
       alert('Please select a payment method.');
       return;
     }
-    alert(`Paid Rs. ${totalPrice} using ${selectedMethod}`);
+    alert(`Paid Rs. ${finalPrice} using ${selectedMethod}`);
   };
 
   const handleCancel = () => {
@@ -51,7 +55,7 @@ const Paymentpage = () => {
         
         
         <div className="button-group">
-          <button type="submit" className="pay-btn">Pay Rs. {totalPrice}</button>
+          <button type="submit" className="pay-btn">Pay Rs. {finalPrice}</button>
           <button type="button" className="cancel-btn" onClick={handleCancel}>Cancel</button>
         </div>
       </form>

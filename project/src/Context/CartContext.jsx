@@ -16,18 +16,24 @@ export const CartProvider = ({ children }) => {
   }, [cartItems]);
 
   const addToCart = (course) => {
-    setCartItems(prev => {
-      const exists = prev.find(item => item.id === course.id);
-      if (exists) return prev;
-      return [...prev, { ...course }];
-    });
-  };
+  console.log("Course being added to cart:", course);
+  setCartItems(prev => {
+    const exists = prev.find(item => item.id === course.id);
+    if (exists) return prev;
+    return [...prev, { ...course }];
+  });
+};
+
 
   const removeFromCart = (id) => {
     setCartItems(prev => prev.filter(item => item.id !== id));
   };
 
-  const totalPrice = cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
+  const totalPrice = cartItems.reduce((total, item) => {
+  const price = parseFloat(item.price);
+  return total + (isNaN(price) ? 0 : price);
+}, 0);
+
 
   return (
     <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, totalPrice }}>

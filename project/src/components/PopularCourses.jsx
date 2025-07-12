@@ -58,7 +58,7 @@ const PopularCourses = () => {
                   Add To Cart
                   <img src={cartIcon} className="cart-icon" />
                 </button>
-                <NavLink to="/payment">
+                <NavLink to="/payment" state={{ price: course.price}}>
                   <button className='btn-2 buy-btn'>
                     Buy Now
                   </button>
