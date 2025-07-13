@@ -1,25 +1,20 @@
-.popular-container {
+.pc-popular-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
   margin-bottom: 80px;
   width: 100%;
-
   padding: 20px;
   background-color: white;
 }
 
-
-.heading {
+.pc-heading {
   font-size: 50px;
   color: navy;
-
 }
 
-
-
-.btn-group {
+.pc-btn-group {
   display: flex;
   flex-direction: row; 
   flex-wrap: wrap;    
@@ -28,7 +23,7 @@
   margin: 20px 0;
 }
 
-.button-btn {
+.pc-button-btn {
   padding: 12px 20px;
   border: none;
   border-radius: 6px;
@@ -38,25 +33,17 @@
   font-weight: 500;
 }
 
-.button-btn.active {
+.pc-button-btn.pc-active {
   background-color: navy;
   color: white;
 }
 
-
-.card-container {
+.pc-card-container {
   display: flex;
   gap: 30px;
-
-
 }
 
-.view-button {
-  background-color: navy;
-}
-
-
-.course-card {
+.pc-course-card {
   border: 1px solid #cbc6c6;
   border-radius: 10px;
   text-align: center;
@@ -64,10 +51,9 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   width: 300px;
   height: 400px;
-
 }
 
-.course-image {
+.pc-course-image {
   width: 100%;
   height: 190px;
   object-fit: cover;
@@ -77,23 +63,19 @@
   box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.1);
 }
 
-
-.cCard-cont {
+.pc-cCard-cont {
   height: 300px;
   text-align: left;
   padding-left: 10px;
 }
 
-
-.p-first {
+.pc-p-first {
   font-size: 12px;
   font-weight: 500;
   margin-bottom: 5px;
 }
 
-
-
-.card-btn {
+.pc-card-btn {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -102,12 +84,11 @@
   margin-right: 10px;
 }
 
-.card-btn a {
+.pc-card-btn a {
   text-decoration: none;
 }
 
-
-.btn-2 {
+.pc-btn-2 {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -121,97 +102,29 @@
   user-select: none;
 }
 
-.cart-btn {
+.pc-cart-btn {
   background-color: #F57C00;
   color: white;
-
 }
 
-.cart-btn:hover {
+.pc-cart-btn:hover {
   background-color: #e67300;
-
 }
 
-
-.buy-btn {
+.pc-buy-btn {
   background-color: #2E7D32;
   color: white;
   padding: 5px 10px;
-
 }
 
-.buy-btn:hover {
+.pc-buy-btn:hover {
   background-color: #1d6921;
-
 }
 
-
-.cart-icon {
+.pc-cart-icon {
   width: 25px;
   height: auto;
   filter: brightness(0) invert(1);
 }
 
-/* @media (max-width: 768px) {
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
 
-  .course-card {
-    flex: 0 0 calc(50% - 20px); 
-    max-width: 100%;
-  }
-
-
-.category-button {
-
-  padding: 10px 13px;
-  font-weight: 300;
-
-}
-
-
-.category-button.active {
-  background-color: navy;
-  color: white;
-}
-
-}
-
-
-
-
-
-
-@media (max-width: 480px) {
-  .course-card {
-    flex: 0 0 80%; 
-    max-width: 80%;
-  }
-
-  .category-button {
-    font-size: 6px;
-    padding: 6px 15px;
-
-  }
-
-  .card-container {
-    gap: 15px;
-    padding: 0 10px;
-  }
-
-
-  .heading {
-  font-size: 25px;
-
-}
-}
-
-
-
-
-
- */

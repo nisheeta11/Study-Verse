@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Search.css';
 import search from '../assets/searchicon.svg';
 import coursesData from '../Data/CourseData';
@@ -23,6 +24,7 @@ const Search = () => {
   const [results, setResults] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
   const containerRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const input = e.target.value;
@@ -44,6 +46,24 @@ const Search = () => {
 
     setResults(matches);
     setShowDropdown(true);
+  };
+
+  const handleSearchClick = () => {
+    const queryLower = query.trim().toLowerCase();
+    if (!queryLower) return;
+
+    // Find course with exact title match or partial title match
+    const foundCourse = allCourses.find(course =>
+      course.title.toLowerCase() === queryLower
+    ) || allCourses.find(course =>
+      course.title.toLowerCase().includes(queryLower)
+    );
+
+    if (foundCourse) {
+      navigate(`/course/${foundCourse.id}`);
+    } else {
+      alert('No matching course found.');
+    }
   };
 
   useEffect(() => {
@@ -100,12 +120,8 @@ const Search = () => {
 
         <button
           className="search-btn"
-          onClick={() => {
-            setQuery('');
-            setResults([]);
-            setShowDropdown(false);
-          }}
-          aria-label="Clear search"
+          onClick={handleSearchClick}
+          aria-label="Search"
           type="button"
         >
           <img className="search-icon" src={search} alt="search icon" />

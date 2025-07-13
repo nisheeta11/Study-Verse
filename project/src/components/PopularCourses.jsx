@@ -4,8 +4,7 @@ import courses from '../Data/CourseData';
 import cartIcon from '../assets/carticon.svg';
 import { CartContext } from '../Context/CartContext';
 import { toast } from 'react-toastify';
-import { NavLink } from 'react-router-dom'
-
+import { NavLink } from 'react-router-dom';
 
 const PopularCourses = () => {
   const [selected, setSelected] = useState("Web Development");
@@ -24,42 +23,41 @@ const PopularCourses = () => {
   };
 
   return (
-    <div className="popular-container">
-      <h2 className="heading">Our Popular Online Courses</h2>
+    <div className="pc-popular-container">
+      <h2 className="pc-heading">Our Popular Online Courses</h2>
 
-      <div className="btn-group">
+      <div className="pc-btn-group">
         {Object.keys(courses).map(category => (
           <button
             key={category}
             onClick={() => setSelected(category)}
-            className={`button-btn ${selected === category ? 'active' : ''}`}
+            className={`pc-button-btn ${selected === category ? 'pc-active' : ''}`}
           >
             {category}
           </button>
         ))}
       </div>
 
-
-      <div className="card-container">
+      <div className="pc-card-container">
         {courses[selected].map((course, index) => (
-          <div className="course-card" key={index}>
-            <img src={course.image} className="course-image" />
+          <div className="pc-course-card" key={index}>
+            <img src={course.image} className="pc-course-image" alt={course.title} />
 
-            <div className="cCard-cont">
+            <div className="pc-cCard-cont">
               <h3>{course.title}</h3>
-              <p className='p-first'>{course.description}</p>
+              <p className='pc-p-first'>{course.description}</p>
               <p><strong>Price:</strong> {course.price}</p>
               <p><strong>Rating:</strong> {course.rating}</p>
 
-              <div className="card-btn">
+              <div className="pc-card-btn">
                 <button
-                  className='btn-2 cart-btn'
+                  className='pc-btn-2 pc-cart-btn'
                   onClick={() => handleAddToCart(course)}>
                   Add To Cart
-                  <img src={cartIcon} className="cart-icon" />
+                  <img src={cartIcon} className="pc-cart-icon" alt="cart icon" />
                 </button>
-                <NavLink to="/payment" state={{ price: course.price}}>
-                  <button className='btn-2 buy-btn'>
+                <NavLink to="/payment" state={{ price: course.price }}>
+                  <button className='pc-btn-2 pc-buy-btn'>
                     Buy Now
                   </button>
                 </NavLink>
@@ -68,7 +66,6 @@ const PopularCourses = () => {
           </div>
         ))}
       </div>
-
 
     </div>
   );
