@@ -54,26 +54,6 @@
 
 
 
-.search-box {
-  display: flex;
-  height: 35px;
-}
-
-.search-box input {
-  padding: 10px 0px 10px 20px;
-  /* top right bottom left */
-  border-radius: 20px;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  background-color: white;
-}
-
-.search-box img {
-  width: 40px;
-  filter: brightness(0) invert(1);
-
-}
 
 
 .cart-wrapper {
@@ -101,6 +81,14 @@
   line-height: 1;
   min-width: 18px;
   text-align: center;
+}
+
+.tutor{
+ background-color: #F57C00; 
+}
+
+.tutor:hover{
+  background-color: #e67300;
 }
 
 

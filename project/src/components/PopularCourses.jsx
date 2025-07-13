@@ -14,7 +14,7 @@ const PopularCourses = () => {
   const handleAddToCart = (course) => {
     addToCart(course);
     toast.success(`${course.title} added to cart`, {
-      position: "top-center",
+      position: "top-right",
       autoClose: 2500,
       hideProgressBar: false,
       closeOnClick: true,

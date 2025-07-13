@@ -14,6 +14,7 @@ const Teacher = () => {
               id="courseName"
               name="courseName"
             /></div>
+            
           <div className="form-input">
             <label htmlFor="description">Description:</label>
             <input

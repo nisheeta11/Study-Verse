@@ -46,7 +46,7 @@ const courses = {
     },
     {
       id: 4,
-      title: "Node.js & Express Essentials",
+      title: "Node.js Essentials",
       description: "Backend fundamentals using Node.js.",
       price: 499,
       rating: 4.6,
@@ -136,7 +136,7 @@ const courses = {
 
     {
       id: 14,
-      title: "Data Visualization with Tableau",
+      title: "Data Visualization",
       description: "Present insights with powerful visuals.",
       price: 699,
       rating: 4.6,

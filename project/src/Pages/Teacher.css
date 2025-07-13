@@ -1,37 +1,81 @@
-.tutor-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    
+
+.tutor-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 40px 20px;
+}
+
+.course-form-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+.course-form-container h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: navy;
+  margin-bottom: 25px;
+
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.form-input label {
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #495057;
+}
+
+.form-input input[type="text"],
+.form-input input[type="file"] {
+  padding: 10px 15px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 12px;
+  transition: border-color 0.3s;
+}
+
+.form-input input[type="text"]:focus,
+.form-input input[type="file"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: navy;
 }
 
 
-.course-form-container{
-    max-width: 800px;
-    border-radius: 16px;
-    padding: 25px;
-    background-color: white;
-    box-shadow: 0 8px 24px rgba(3, 3, 3, 0.08);
-}
+@media (max-width: 480px) {
+  .course-form-container {
+    padding: 30px 20px;
+  }
 
-
-.course-form-container h2{
-    text-align: center;
-    color: navy;
-    font-size: 25px;
-    margin-bottom: 30px;
-}
-
-.form-input{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.form-input label{
+  .course-form-container h2 {
     font-size: 20px;
-}
-.form-input input{
-    padding: 5px 0px;
+  }
 }
