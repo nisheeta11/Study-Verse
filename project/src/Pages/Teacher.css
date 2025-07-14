@@ -70,6 +70,15 @@ button[type="submit"]:hover {
 }
 
 
+.error {
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+  display: block;
+}
+
+
+
 @media (max-width: 480px) {
   .course-form-container {
     padding: 30px 20px;

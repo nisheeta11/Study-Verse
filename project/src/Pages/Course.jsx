@@ -1,19 +1,18 @@
 import React, { useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import coursesData from '../Data/CourseData';
 import './Course.css';
 import { CartContext } from '../Context/CartContext';
+import CourseContext from '../Context/CourseContext';
 import { toast } from 'react-toastify';
 import cartIcon from '../assets/carticon.svg';
-
-const allCourses = Object.values(coursesData).flat();
 
 const Course = () => {
   const { id } = useParams();
   const [showFullDetails, setShowFullDetails] = useState(false);
   const { addToCart } = useContext(CartContext);
+  const { courses } = useContext(CourseContext);
 
-  const course = allCourses.find(c => c.id.toString() === id);
+  const course = courses.find(c => c.id.toString() === id);
 
   if (!course) {
     return <div className="course-not-found"><h2>Course Not Found</h2></div>;

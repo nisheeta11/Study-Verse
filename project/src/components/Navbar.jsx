@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import cartIcon from '../assets/carticon.svg';
 import { CartContext } from '../Context/CartContext'; 
-import Search from './Search';
+import Search from '../Context/SearchContext';
 
 
 

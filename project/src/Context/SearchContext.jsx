@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Search.css';
+import './SearchContext.css';
 import search from '../assets/searchicon.svg';
 import coursesData from '../Data/CourseData';
 
@@ -30,7 +30,7 @@ const Search = () => {
     const input = e.target.value;
     setQuery(input);
 
-    if (!input.trim()) {
+    if (input.trim().length < 3) {
       setResults([]);
       setShowDropdown(false);
       return;
@@ -50,19 +50,33 @@ const Search = () => {
 
   const handleSearchClick = () => {
     const queryLower = query.trim().toLowerCase();
-    if (!queryLower) return;
+    if (queryLower.length < 3) {
+      alert('Please enter at least 3 characters to search.');
+      return;
+    }
 
-    // Find course with exact title match or partial title match
     const foundCourse = allCourses.find(course =>
-      course.title.toLowerCase() === queryLower
-    ) || allCourses.find(course =>
-      course.title.toLowerCase().includes(queryLower)
+      course.title.toLowerCase().includes(queryLower) ||
+      course.description.toLowerCase().includes(queryLower)
     );
 
     if (foundCourse) {
       navigate(`/course/${foundCourse.id}`);
+      setQuery('');
+      setResults([]);
+      setShowDropdown(false);
     } else {
       alert('No matching course found.');
+    }
+  };
+
+  const handleSelect = (title) => {
+    const foundCourse = allCourses.find(course => course.title === title);
+    if (foundCourse) {
+      navigate(`/course/${foundCourse.id}`);
+      setQuery('');
+      setResults([]);
+      setShowDropdown(false);
     }
   };
 
@@ -76,11 +90,6 @@ const Search = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleSelect = (title) => {
-    setQuery(title);
-    setShowDropdown(false);
-  };
-
   return (
     <div className="search-container" ref={containerRef}>
       <div className="search-box">
@@ -91,7 +100,7 @@ const Search = () => {
             className="search-input"
             value={query}
             onChange={handleInputChange}
-            onFocus={() => query && results.length > 0 && setShowDropdown(true)}
+            onFocus={() => query.length >= 3 && results.length > 0 && setShowDropdown(true)}
             autoComplete="off"
           />
 
@@ -123,6 +132,7 @@ const Search = () => {
           onClick={handleSearchClick}
           aria-label="Search"
           type="button"
+          disabled={query.trim().length < 3}
         >
           <img className="search-icon" src={search} alt="search icon" />
         </button>

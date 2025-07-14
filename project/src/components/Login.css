@@ -89,4 +89,12 @@ form {
   text-decoration: underline;
 }
 
+.link-text {
+  color: #00bfff;
+  cursor: pointer;
+  user-select: none;
+}
+.link-text:hover {
+  text-decoration: underline;
+}
 

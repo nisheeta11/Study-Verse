@@ -1,129 +1,101 @@
 import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
+import '../components/Login.css';
 
-
-const Signup = ({ onSwitchToLogin }) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-  });
-  const [errors, setErrors] = useState({});
+const Signup = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const validate = () => {
-    const errors = {};
+  const onSignupSubmit = async (data) => {
+    setIsSubmitting(true);
+    try {
+      const res = await fetch('http://localhost:5000/api/auth/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
 
-    if (!formData.name.trim()) {
-      errors.name = 'Name is required';
-    }
+      const result = await res.json();
 
-    if (!formData.email.trim()) {
-      errors.email = 'Email is required';
-    } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)
-    ) {
-      errors.email = 'Invalid email address';
-    }
-
-    if (!formData.password) {
-      errors.password = 'Password is required';
-    } else if (formData.password.length < 6) {
-      errors.password = 'Password must be at least 6 characters';
-    }
-
-    return errors;
-  };
-
-  const handleChange = e => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-
-  
-    setErrors(prev => ({
-      ...prev,
-      [e.target.name]: '',
-    }));
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-
-    const validationErrors = validate();
-    setErrors(validationErrors);
-
-    if (Object.keys(validationErrors).length === 0) {
-      setIsSubmitting(true);
-
-      
-      setTimeout(() => {
+      if (res.ok) {
         alert('Signup successful! You can now login.');
-        setIsSubmitting(false);
-        onSwitchToLogin();
-      }, 1500);
+        window.location.href = '/login'; 
+      } else {
+        alert(result.message || 'Signup failed');
+      }
+    } catch (error) {
+      alert('Network error');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div>
-      <h2>Sign Up for StudyVerse</h2>
-      <form onSubmit={handleSubmit} noValidate>
-        <div className="form-cont">
-          <label>Name</label>
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter your name"
-            value={formData.name}
-            onChange={handleChange}
-            disabled={isSubmitting}
-          />
-          {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
-        </div>
-        <div className="form-cont">
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            value={formData.email}
-            onChange={handleChange}
-            disabled={isSubmitting}
-          />
-          {errors.email && <p style={{ color: 'red' }}>{errors.email}</p>}
-        </div>
-        <div className="form-cont">
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            placeholder="Create a password"
-            value={formData.password}
-            onChange={handleChange}
-            disabled={isSubmitting}
-          />
-          {errors.password && <p style={{ color: 'red' }}>{errors.password}</p>}
-        </div>
-        <button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? 'Signing Up...' : 'Sign Up'}
-        </button>
-      </form>
+    <div className="login-container">
+      <div className="login-box">
+        <h2>Sign Up for StudyVerse</h2>
+        <form onSubmit={handleSubmit(onSignupSubmit)} noValidate>
+          <div className="form-cont">
+            <label>Name</label>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              {...register('name', { required: 'Name is required' })}
+              disabled={isSubmitting}
+            />
+            {errors.name && <p className="error-text">{errors.name.message}</p>}
+          </div>
 
-      <p className="signup-text">
-        Already have an account?{' '}
-        <span
-          onClick={onSwitchToLogin}
-          style={{ color: '#00bfff', cursor: 'pointer' }}
-        >
-          Login
-        </span>
-      </p>
+          <div className="form-cont">
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              {...register('email', {
+                required: 'Email is required',
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: 'Invalid email address',
+                },
+              })}
+              disabled={isSubmitting}
+            />
+            {errors.email && <p className="error-text">{errors.email.message}</p>}
+          </div>
+
+          <div className="form-cont">
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Create a password"
+              {...register('password', {
+                required: 'Password is required',
+                minLength: {
+                  value: 6,
+                  message: 'Password must be at least 6 characters',
+                },
+              })}
+              disabled={isSubmitting}
+            />
+            {errors.password && <p className="error-text">{errors.password.message}</p>}
+          </div>
+
+          <button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? 'Signing Up...' : 'Sign Up'}
+          </button>
+        </form>
+
+        <p className="signup-text">
+          Already have an account?{' '}
+          <Link to="/login" className="link-text">
+            Login
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };
 
 export default Signup;
-
-
 
