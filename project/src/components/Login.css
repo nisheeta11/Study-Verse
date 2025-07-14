@@ -1,4 +1,3 @@
-
 .login-container {
   display: flex;
   align-items: center;
@@ -6,10 +5,12 @@
   background-color: #d1e6f9;
   height: 100vh;
   width: 100vw;
+  padding: 20px; /* add padding for smaller screens */
+  box-sizing: border-box;
 }
 
 .login-box {
- background: white;
+  background: white;
   padding: 32px 28px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -17,37 +18,51 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 480px; 
+  min-height: 480px;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .login-box h2 {
   margin-bottom: 20px;
   color: navy;
+  font-weight: 700;
+  font-size: 28px;
+  text-align: center;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 24px; /* slightly smaller gap */
 }
 
-.form-cont{
+.form-cont {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .login-box label {
   margin: 6px 0 4px;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
 }
 
 .login-box input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 12px 14px; /* a bit more padding */
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.25s ease;
+}
+
+.login-box input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .login-box button {
@@ -55,46 +70,63 @@ form {
   background-color: navy;
   color: white;
   border: none;
-  padding: 12px;
+  padding: 14px;
   font-size: 16px;
-  border-radius: 6px;
+  font-weight: 600;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.login-box button:hover {
+.login-box button:hover,
+.login-box button:focus {
   background-color: #003366;
+  outline: none;
 }
-
 
 .error-text {
-   color: red;
+  color: red;
   font-size: 13px;
   margin: 0;
-  height: 14px;
+  min-height: 18px; /* more consistent space so layout doesn’t jump */
 }
-
 
 .signup-text {
   font-size: 14px;
   text-align: center;
-  margin-top: 12px;
+  margin-top: 16px;
+  color: #333;
 }
 
 .signup-text a {
-  color: #00bfff;
+  color: #007bff;
   text-decoration: none;
+  font-weight: 600;
 }
 
-.signup-text a:hover {
-  text-decoration: underline;
-}
-
-.link-text {
-  color: #00bfff;
-  cursor: pointer;
-  user-select: none;
-}
+.signup-text a:hover,
 .link-text:hover {
   text-decoration: underline;
 }
 
+.link-text {
+  color: #007bff;
+  cursor: pointer;
+  user-select: none;
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    padding: 28px 20px;
+    min-height: auto;
+  }
+
+  .login-box h2 {
+    font-size: 24px;
+  }
+
+  .login-box input,
+  .login-box button {
+    font-size: 14px;
+  }
+}

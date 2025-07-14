@@ -23,14 +23,37 @@ const Paymentpage = () => {
     { name: 'MasterCard', image: mastercard },
   ];
 
-  const handlePayment = (e) => {
-    e.preventDefault();
-    if (!selectedMethod) {
-      alert('Please select a payment method.');
-      return;
+  const handlePayment = async (e) => {
+  e.preventDefault();
+  if (!selectedMethod) {
+    alert('Please select a payment method.');
+    return;
+  }
+
+  try {
+    const res = await fetch('http://localhost:5000/api/payment/checkout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ 
+        price: Math.round(finalPrice),  // Convert to paisa (integer)
+        method: selectedMethod
+      }),
+    });
+
+    const data = await res.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      alert('Something went wrong with payment redirection.');
     }
-    alert(`Paid Rs. ${finalPrice} using ${selectedMethod}`);
-  };
+  } catch (err) {
+    console.error(err);
+    alert('Payment failed. Try again later.');
+  }
+};
+
 
   const handleCancel = () => {
     navigate('/AddToCart'); 
@@ -52,8 +75,7 @@ const Paymentpage = () => {
             </div>
           ))}
         </div>
-        
-        
+
         <div className="button-group">
           <button type="submit" className="pay-btn">Pay Rs. {finalPrice}</button>
           <button type="button" className="cancel-btn" onClick={handleCancel}>Cancel</button>

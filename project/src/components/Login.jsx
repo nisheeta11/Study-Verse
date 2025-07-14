@@ -1,32 +1,36 @@
+// File: src/components/Login.jsx
+
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
-import '../components/Login.css'; 
+import '../components/Login.css';
 
-const LoginPage = () => {
+const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const onLoginSubmit = async (data) => {
+  const onSubmit = async (data) => {
     setIsLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch('http://localhost:5000/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
+      const result = await response.json();
 
-      const result = await res.json();
-
-      if (res.ok) {
+      if (response.ok) {
+        // Save any auth tokens or user info here if you have
         localStorage.setItem('isAuthenticated', 'true');
-        navigate('/');
+        // You can save user info as well if returned
+        // localStorage.setItem('user', JSON.stringify(result.user));
+        navigate('/'); // Redirect to homepage or dashboard
       } else {
-        alert(result.message || 'Login failed');
+        alert(result.message || 'Login failed. Please try again.');
       }
     } catch (error) {
-      alert('Network error');
+      alert('Network error. Please try again.');
     } finally {
       setIsLoading(false);
     }
@@ -36,10 +40,11 @@ const LoginPage = () => {
     <div className="login-container">
       <div className="login-box">
         <h2>Login to StudyVerse</h2>
-        <form onSubmit={handleSubmit(onLoginSubmit)} noValidate>
+        <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className="form-cont">
-            <label>Email</label>
+            <label htmlFor="email">Email</label>
             <input
+              id="email"
               type="email"
               placeholder="Enter your email"
               {...register('email', {
@@ -55,8 +60,9 @@ const LoginPage = () => {
           </div>
 
           <div className="form-cont">
-            <label>Password</label>
+            <label htmlFor="password">Password</label>
             <input
+              id="password"
               type="password"
               placeholder="Enter your password"
               {...register('password', {
@@ -87,4 +93,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Login;

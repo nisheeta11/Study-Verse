@@ -1,4 +1,3 @@
-
 .tutor-form {
   display: flex;
   justify-content: center;
@@ -22,7 +21,6 @@
   font-weight: 600;
   color: navy;
   margin-bottom: 25px;
-
 }
 
 .form-input {
@@ -37,17 +35,23 @@
   color: #495057;
 }
 
+/* Text and file inputs */
 .form-input input[type="text"],
-.form-input input[type="file"] {
+.form-input input[type="file"],
+.form-input select {
   padding: 10px 15px;
   border: 1px solid #ced4da;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 14px;
   transition: border-color 0.3s;
+  appearance: none; /* Remove default dropdown arrow in some browsers */
+  background-color: #fff;
+  cursor: pointer;
 }
 
 .form-input input[type="text"]:focus,
-.form-input input[type="file"]:focus {
+.form-input input[type="file"]:focus,
+.form-input select:focus {
   border-color: #007bff;
   outline: none;
 }
@@ -69,15 +73,12 @@ button[type="submit"]:hover {
   background-color: navy;
 }
 
-
 .error {
   color: red;
   font-size: 13px;
   margin-top: 4px;
   display: block;
 }
-
-
 
 @media (max-width: 480px) {
   .course-form-container {

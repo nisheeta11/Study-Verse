@@ -46,8 +46,8 @@ const PopularCourses = () => {
             <div className="pc-cCard-cont">
               <h3>{course.title}</h3>
               <p className='pc-p-first'>{course.description}</p>
-              <p><strong>Price:</strong> {course.price}</p>
-              <p><strong>Rating:</strong> {course.rating}</p>
+              <p><strong>Price:</strong> Rs. {course.price}</p>
+              <p><strong>Rating:</strong> ⭐ {course.rating}</p>
 
               <div className="pc-card-btn">
                 <button
@@ -56,6 +56,7 @@ const PopularCourses = () => {
                   Add To Cart
                   <img src={cartIcon} className="pc-cart-icon" alt="cart icon" />
                 </button>
+
                 <NavLink to="/payment" state={{ price: course.price }}>
                   <button className='pc-btn-2 pc-buy-btn'>
                     Buy Now
@@ -66,7 +67,6 @@ const PopularCourses = () => {
           </div>
         ))}
       </div>
-
     </div>
   );
 };
