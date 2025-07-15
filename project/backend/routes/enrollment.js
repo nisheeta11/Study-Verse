@@ -1,8 +1,8 @@
 const express = require('express');
-const router = express.Router();
 const Enrollment = require('../models/Enrollment');
 
-// Create a new enrollment
+const router = express.Router();
+
 router.post('/', async (req, res) => {
   try {
     const { student, course } = req.body;
@@ -21,7 +21,6 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Get all enrollments
 router.get('/', async (req, res) => {
   try {
     const enrollments = await Enrollment.find()

@@ -2,7 +2,6 @@
   "name": "studyverse-backend",
   "version": "1.0.0",
   "main": "server.js",
-  "type": "module",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
@@ -10,19 +9,12 @@
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
-<<<<<<< HEAD:backend/package.json
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "mongoose": "^7.3.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
-=======
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
     "mongoose": "^8.16.3",
     "stripe": "^18.3.0"
->>>>>>> 072c07715728be14e8bf2b67f4ca4d88eba9bd48:project/backend/package.json
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
-

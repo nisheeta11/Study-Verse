@@ -18,12 +18,18 @@ const Login = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
+
       const result = await response.json();
 
       if (response.ok) {
         setUser(result.user);
         localStorage.setItem('user', JSON.stringify(result.user));
-        navigate('/');
+
+        if (result.user.role === 'admin') {
+          navigate('/admin');
+        } else {
+          navigate('/');
+        }
       } else {
         alert(result.message || 'Login failed. Please try again.');
       }

@@ -1,0 +1,27 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: 220px;
+  background: #222;
+  color: white;
+  padding: 1rem;
+}
+
+.admin-sidebar nav a {
+  display: block;
+  color: #fff;
+  margin: 0.5rem 0;
+  text-decoration: none;
+}
+
+.admin-sidebar nav a.active {
+  font-weight: bold;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 2rem;
+}
