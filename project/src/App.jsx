@@ -15,6 +15,7 @@ import Course from './Pages/Course';
 import { CourseProvider } from './Context/CourseContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import TeacherDashboard from './Pages/TeacherDashboard';
+// import AdminPanel from './Pages/AdminPanel';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,13 @@ const router = createBrowserRouter([
       <><ScrollToTop /> <Navbar /> <Home /> <Footer /></>
     )
   },
+  // {
+  //   path: "/admin",
+  //   element: (
+  //     <>
+  //       <ScrollToTop /> <Navbar /> <ProtectedRoute adminOnly={true}> <AdminPanel /> </ProtectedRoute></>
+  //   )
+  // },
   {
     path: "/login",
     element: (
