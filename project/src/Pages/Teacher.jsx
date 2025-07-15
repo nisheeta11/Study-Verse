@@ -50,9 +50,8 @@ const Teacher = () => {
         author: formData.author,
       };
 
-      const newCourseId = addCourse(courseData);
+      addCourse(courseData);
       alert('Course submitted successfully!');
-      navigate(`/course/${newCourseId}`);
     }
   };
 

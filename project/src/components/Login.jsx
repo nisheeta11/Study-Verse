@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import '../components/Login.css'; 
+import { AuthContext } from '../Context/AuthContext';
 
 const LoginPage = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { setUser } = useContext(AuthContext);
 
   const onLoginSubmit = async (data) => {
     setIsLoading(true);
@@ -20,7 +22,8 @@ const LoginPage = () => {
       const result = await res.json();
 
       if (res.ok) {
-        localStorage.setItem('isAuthenticated', 'true');
+        setUser(result.user);
+        localStorage.setItem('user', JSON.stringify(result.user));
         navigate('/');
       } else {
         alert(result.message || 'Login failed');
@@ -88,3 +91,4 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+

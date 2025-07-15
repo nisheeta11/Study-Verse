@@ -13,24 +13,24 @@ const Home = () => {
     <div>
 
       <div className="container">
-        
-          <div className="slogan">
-            <h1>Learn. Grow. Succeed.</h1>
-            <p>Your future starts with StudyVerse — Learn skills that shape tomorrow.</p>
-            <p className="highlight">Master in-demand skills. Build your future. Succeed with confidence.</p>
 
-            <NavLink to="/course">
-              <button className='btn home-btn'>
-                View Courses
-                <img src={courseArrow} alt="Try Arrow" className="arrow-icon" />
-              </button></NavLink>
-              
-          </div>
-       
+        <div className="slogan">
+          <h1>Learn. Grow. Succeed.</h1>
+          <p>Your future starts with StudyVerse — Learn skills that shape tomorrow.</p>
+          <p className="highlight">Master in-demand skills. Build your future. Succeed with confidence.</p>
 
-        
-          <img className='img1' src={learningImg} alt="Learning" />
-       
+          <NavLink to="/course">
+            <button className='btn home-btn'>
+              View Courses
+              <img src={courseArrow} alt="Try Arrow" className="arrow-icon" />
+            </button></NavLink>
+
+        </div>
+
+
+
+        <img className='img1' src={learningImg} alt="Learning" />
+
       </div>
 
 

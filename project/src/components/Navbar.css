@@ -4,17 +4,15 @@
   position: sticky;
   top: 0;
   z-index: 9999;
-
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
-
 
 .nav-links {
   display: flex;
@@ -28,13 +26,12 @@
   font-weight: 400;
 }
 
-
 .btn {
   background-color: #2E8B57;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  padding: 10px 20px;
+  padding: 8px 12px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -44,10 +41,6 @@
 .btn:hover {
   background-color: #1b6f3f;
 }
-
-
-
-
 
 .cart-wrapper {
   position: relative;
@@ -59,7 +52,6 @@
   height: 38px;
   filter: brightness(0) invert(1);
 }
-
 
 .cart-count {
   position: absolute;
@@ -84,46 +76,76 @@
   background-color: #e67300;
 }
 
+.profile-icon {
+  font-size: 35px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
 
-@media (max-width:480px) {
-  .navbar {
-    padding: 10px 20px;
+.profile-icon:hover {
+  color: #cce4ff;
+  transform: scale(1.05);
+}
 
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
 
-  }
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 48px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  width: 220px;
+  padding: 12px 0;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
 
+.profile-dropdown:hover .dropdown-menu,
+.dropdown-menu:hover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
 
+.dropdown-menu p:first-child {
+  margin: 5px 14px;
+  font-size: 15px;
+  color: #262626;
+  font-weight: 500;
+  word-break: break-word;
+}
 
-  .nav-links {
-    gap: 10px;
-  }
+.email {
+  opacity: 0.7;
+  font-size: 12px;
+  margin-left: 14px;
+}
 
+.logout-btn {
+  margin: 10px 16px 6px;
+  background: none;
+  border: none;
+  color: #ed4956;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+  padding: 8px 0;
+  transition: color 0.2s ease;
+  width: 100%;
+}
 
-  .gs-btn {
-    border-radius: 2px;
-  }
-
-
-
-  .search-box {
-    height: 15px;
-  }
-
-  .search-input {
-    font-size: 10px;
-  }
-
-
-  .search-box img {
-    width: 20px;
-
-  }
-
-  .btn {
-
-    font-size: 8px;
-    font-weight: 400;
-    padding: 5px 10px;
-
-  }
+.logout-btn:hover {
+  color: #c0392b;
 }

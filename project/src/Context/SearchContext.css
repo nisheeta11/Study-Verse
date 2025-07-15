@@ -1,8 +1,7 @@
 .search-container {
   width: 50%;
-  max-width: 250px;
+  max-width: 350px;
   margin: 30px auto;
-  margin-right: 50px;
   z-index: 10;
 }
 

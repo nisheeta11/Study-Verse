@@ -10,103 +10,71 @@ import ScrollToTop from './components/ScrollToTop';
 import AddToCart from './Pages/AddToCart';
 import Payment from './Pages/Paymentpage';
 import PopularCourses from './components/PopularCourses';
-import Teacher from './Pages/Teacher';
+import TeacherCourseForm from './Pages/Teacher';
 import Course from './Pages/Course';
-
 import { CourseProvider } from './Context/CourseContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import TeacherDashboard from './Pages/TeacherDashboard';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <><ScrollToTop />
-        <Navbar />
-        <Home />
-        <Footer />
-      </>
+      <><ScrollToTop /> <Navbar /> <Home /> <Footer /></>
     )
   },
   {
     path: "/login",
     element: (
-      <>
-        <ScrollToTop />
-        <Login />
-      </>
+      <><ScrollToTop /> <Login /></>
     )
   },
   {
     path: "/signup",
     element: (
-      <>
-        <ScrollToTop />
-        <Signup />
-      </>
+      <><ScrollToTop /><Signup /></>
     )
   },
   {
     path: "/about",
     element: (
-      <>
-        <ScrollToTop />
-        <Navbar />
-        <About />
-      </>
+      <><ScrollToTop /> <Navbar /> <About /></>
     )
   },
   {
     path: "/course",
     element: (
-      <>
-        <ScrollToTop />
-        <Navbar />
-        <PopularCourses />
-        <Footer />
-      </>
+      <><ScrollToTop /> <Navbar /> <PopularCourses /> <Footer /></>
     )
   },
   {
     path: "/course/:id",
     element: (
-      <>
-        <ScrollToTop />
-        <Navbar />
-        <Course />
-      </>
+      <><ScrollToTop /> <Navbar /> <Course /></>
     )
   },
   {
     path: "/addtocart",
     element: (
-      <>
-        <ScrollToTop />
-        <Navbar />
-        <AddToCart />
-      </>
+      <><ScrollToTop /> <Navbar /> <AddToCart /></>
     )
   },
   {
     path: "/payment",
     element: (
-      <>
-        <ScrollToTop />
-        <ProtectedRoute>
-          <Payment />
-        </ProtectedRoute>
-      </>
+      <><ScrollToTop /> <ProtectedRoute> <Payment /> </ProtectedRoute></>
     )
   },
   {
     path: "/teacher",
     element: (
-      <>
-        <ScrollToTop />
-        <Navbar />
-        <ProtectedRoute>
-          <Teacher />
-        </ProtectedRoute>
-      </>
+      <><ScrollToTop /> <Navbar /> <ProtectedRoute> <TeacherDashboard /> </ProtectedRoute></>
+    )
+  },
+  {
+    path: "/courseform",
+    element: (
+      <><ScrollToTop /> <Navbar /> <TeacherCourseForm /> </>
     )
   }
 ]);

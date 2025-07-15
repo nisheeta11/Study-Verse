@@ -9,5 +9,23 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.6.3",
     "react-toastify": "^11.0.5"
-  }
+  },
+  "name": "studyverse",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nisheeta11/Study-Verse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nisheeta11/Study-Verse/issues"
+  },
+  "homepage": "https://github.com/nisheeta11/Study-Verse#readme",
+  "description": ""
 }
