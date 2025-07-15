@@ -25,7 +25,7 @@ const Teacher = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = {};
 
@@ -44,14 +44,24 @@ const Teacher = () => {
       const courseData = {
         title: formData.courseName,
         description: formData.description,
-        price: formData.price,
+        price: Number(formData.price),
         image: formData.image,
         language: formData.language,
         author: formData.author,
       };
 
-      addCourse(courseData);
-      alert('Course submitted successfully!');
+      try {
+        const newCourseId = await addCourse(courseData);
+        if (newCourseId) {
+          alert('Course submitted successfully!');
+          navigate(`/course/${newCourseId}`);
+        } else {
+          alert('Failed to add course. Please try again.');
+        }
+      } catch (error) {
+        alert('Error submitting course. Please try again.');
+        console.error('Add course error:', error);
+      }
     }
   };
 

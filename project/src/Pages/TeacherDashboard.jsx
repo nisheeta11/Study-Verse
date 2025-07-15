@@ -88,8 +88,7 @@ const TeacherDashboard = () => {
                 <button
                   onClick={() => handleDelete(id)}
                   className="btn-delete-small"
-                  title="Delete Course"
-                >
+                  title="Delete Course">
                   Delete
                 </button>
               </li>
