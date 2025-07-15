@@ -1,9 +1,11 @@
-import bcrypt from 'bcrypt';
-import User from '../models/User.js';
+const bcrypt = require('bcrypt');
+const User = require('../models/User');
+const LoginLog = require('../models/LoginLog');
 
-
-
-export const signup = async (req, res) => {
+// ---------------------------
+// User Signup
+// ---------------------------
+const signup = async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
@@ -28,8 +30,10 @@ export const signup = async (req, res) => {
   }
 };
 
-
-export const login = async (req, res) => {
+// ---------------------------
+// User Login + Logging
+// ---------------------------
+const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -47,9 +51,40 @@ export const login = async (req, res) => {
       return res.status(401).json({ message: 'Invalid email or password' });
     }
 
-    res.status(200).json({ user: { _id: user._id, name: user.name, email: user.email } });
+    await LoginLog.create({
+      userId: user._id,
+      email: user.email,
+      ipAddress: req.ip || req.headers['x-forwarded-for'] || 'Unknown',
+    });
+
+    res.status(200).json({
+      user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+      },
+    });
   } catch (error) {
     console.error('Login error:', error);
     res.status(500).json({ message: 'Server error during login' });
   }
+};
+
+// ---------------------------
+// Get All Login Logs
+// ---------------------------
+const getLoginLogs = async (req, res) => {
+  try {
+    const logs = await LoginLog.find().sort({ loginTime: -1 }); // Most recent first
+    res.status(200).json(logs);
+  } catch (error) {
+    console.error('Login Logs Error:', error);
+    res.status(500).json({ message: 'Server error while fetching login logs' });
+  }
+};
+
+module.exports = {
+  signup,
+  login,
+  getLoginLogs,
 };
